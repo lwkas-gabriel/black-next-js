@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 
-const Cart : NextPage = () => {
+const Cart: NextPage = () => {
     return (
         <>
             <Head>
@@ -16,3 +16,5 @@ const Cart : NextPage = () => {
         </>
     )
 }
+
+export default Cart;
