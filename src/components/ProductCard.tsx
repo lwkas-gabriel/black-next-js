@@ -4,20 +4,22 @@ import React, {useState} from "react";
 import { Button, Card, CardBody, CardSubtitle } from "reactstrap";
 import {  ProductType } from "../services/products";
 import SuccessToast from "./SuccessToast";
+import { useCart } from "@/hooks/useCart";
 
 type ProductCardProps = {
     product: ProductType
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-    const [toastIsOpen, setToastIsOpen] = useState(false)
-    const { id, name, imageUrl, price } = product
+    const [toastIsOpen, setToastIsOpen] = useState(false);
+    const { id, name, imageUrl, price } = product;
+    const { addProduct } = useCart()
   
     return (
         <>
             <Card>
                 <Link href={`/products/${id}`}>
-                    <Image className="card-img-top" src={imageUrl} alt={product.name} height={500} width={600} />
+                    <Image className="card-img-top" src={imageUrl} alt={product.name} height={290} width={600} />
                 </Link>
         
                 <CardBody>
@@ -36,6 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     className="pb-2"
                     block
                     onClick={() => {
+                    addProduct(product)
                     setToastIsOpen(true)
                     setTimeout(() => setToastIsOpen(false), 1000 * 3)
                     }}
