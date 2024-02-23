@@ -59,3 +59,5 @@ const Product: NextPage = (props: {
         </div>
     );
 }
+
+export default Product;
