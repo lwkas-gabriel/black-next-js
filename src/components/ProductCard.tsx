@@ -21,8 +21,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 </Link>
         
                 <CardBody>
-                <Link href={`/products/${id}`}>
-                    <h5 className="card-title" style={{ cursor: 'pointer' }}>
+                <Link className="card-title text-decoration-none" href={`/products/${id}`}>
+                    <h5 style={{ cursor: 'pointer' }}>
                         {name}
                     </h5>
                 </Link>

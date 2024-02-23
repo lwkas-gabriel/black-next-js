@@ -48,7 +48,7 @@ const Product: NextPage = (props: {
             <Head>
                 <title>{props.product!.name}</title>
                 <meta name="description" content={props.product!.description}/>
-                <link rel="stylesheet" href="" />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <Header />
